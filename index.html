@@ -85,10 +85,25 @@
         event.preventDefault();
 
         // 在此處理表單提交的其他邏輯，例如驗證輸入、處理資料等
-        // ...
+        // 獲取使用者輸入的值並進行 HTML 實體碼轉換
+        var name = htmlEntity(document.getElementById("name").value);
+        var sex = htmlEntity(document.getElementById("sex").value);
+        var remark = htmlEntity(document.getElementById("remark").value);
+
+        // 更新表單輸入欄位的值
+        document.getElementById("name").value = name;
+        document.getElementById("sex").value = sex;
+        document.getElementById("remark").value = remark;
 
         // 手動觸發表單提交
         document.getElementById("myForm").submit();
+      }
+
+      function htmlEntity(str) {
+        var reg = /["'<>=(){}?+|]/g; // 所有要轉換的特殊字元
+        return str.replace(reg, function (i) {
+          return "&#" + i.charCodeAt(0) + ";";
+        });
       }
     </script>
   </body>
