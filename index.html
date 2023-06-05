@@ -80,6 +80,14 @@
       </form>
     </div>
     <script>
+      var reg = /["'<>=(){}?+|]/g; // 所有要轉換的特殊字元
+
+      function htmlEntity(str) {
+        return str.replace(reg, function (i) {
+          return "&#" + i.charCodeAt(0) + ";";
+        });
+      }
+
       function submitForm() {
         // 取消表單預設的提交行為
         event.preventDefault();
@@ -97,13 +105,6 @@
 
         // 手動觸發表單提交
         document.getElementById("myForm").submit();
-      }
-
-      function htmlEntity(str) {
-        var reg = /["'<>=(){}?+|]/g; // 所有要轉換的特殊字元
-        return str.replace(reg, function (i) {
-          return "&#" + i.charCodeAt(0) + ";";
-        });
       }
     </script>
   </body>
