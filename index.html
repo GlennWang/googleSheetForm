@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 10px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-group input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .form-group input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>意見箱</h2>
+      <iframe name="hidden_iframe" style="display: none"></iframe>
+      <form
+        action="https://script.google.com/macros/s/AKfycbx_FnrWxZLy_VDL5q2w7GSkn7U6sPPqJCKuyh0hjEignDNIkkOTh-VKVy9YHOPOm4PbvA/exec"
+        method="post"
+        target="hidden_iframe"
+      >
+        <input type="hidden" name="method" value="write" />
+        <div class="form-group">
+          <label for="name">稱謂：</label>
+          <input type="text" id="name" name="name" placeholder="填入稱謂" />
+        </div>
+        <div class="form-group">
+          <label for="sex">性別：</label>
+          <input type="text" id="sex" name="sex" placeholder="填入性別" />
+        </div>
+        <div class="form-group">
+          <label for="remark">意見：</label>
+          <input type="text" id="remark" name="remark" placeholder="填入意見" />
+        </div>
+        <div class="form-group">
+          <input type="submit" value="提交" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
