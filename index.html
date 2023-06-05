@@ -82,10 +82,20 @@
     <script>
       var reg = /["'<>=(){}?+|]/g; // 所有要轉換的特殊字元
 
+      //   function htmlEntity(str) {
+      //     return str.replace(reg, function (i) {
+      //       return "&#" + i.charCodeAt(0) + ";";
+      //     });
+      //   }
+      //   function htmlEntity(str) {
+      //     var tempElement = document.createElement("textarea");
+      //     tempElement.textContent = str;
+      //     return tempElement.innerHTML;
+      //   }
       function htmlEntity(str) {
-        return str.replace(reg, function (i) {
-          return "&#" + i.charCodeAt(0) + ";";
-        });
+        var tempElement = document.createElement("div");
+        tempElement.innerText = str;
+        return tempElement.innerHTML;
       }
 
       function submitForm() {
