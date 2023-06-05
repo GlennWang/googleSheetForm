@@ -74,9 +74,21 @@
           <input type="text" id="remark" name="remark" placeholder="填入意見" />
         </div>
         <div class="form-group">
-          <input type="submit" value="提交" />
+          <input type="button" value="提交" onclick="submitForm()" />
         </div>
       </form>
     </div>
+    <script>
+      function submitForm() {
+        // 取消表單預設的提交行為
+        event.preventDefault();
+
+        // 在此處理表單提交的其他邏輯，例如驗證輸入、處理資料等
+        // ...
+
+        // 手動觸發表單提交
+        document.getElementById("myForm").submit();
+      }
+    </script>
   </body>
 </html>
